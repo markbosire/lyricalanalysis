@@ -334,8 +334,8 @@ useEffect(()=>{
      
         <img src={imageUrl} className="avatar"></img>
         <h3>Hi {user.display_name}</h3>
-        {analysisresult!=null?<p>{(analysisresult*-1).toFixed(2)}/5 {analysisresult<0?"negativity scale":"positivity scale"}</p>:<p>loading</p>}
-      
+         {analysisresult!=null?<p>Your 10 recent songs scored a {(analysisresult<0?analysisresult*-1:analysisresult).toFixed(2)}/5 {analysisresult<0?"in the negativity scale":"in the positivity scale"}</p>:<p>loading</p>}
+     
       </header>
       <div >{
       
@@ -371,6 +371,8 @@ useEffect(()=>{
       <img className="proImg" src={playlist.images.length>0?playlist.images[0].url:"https://cdn.dribbble.com/users/1752437/screenshots/14183305/ep_4x.png"} alt={playlist.name} />
     </div>}
     {!loading?<div className="centering"><p>{renderEmotionScale(analysisresultPL)}</p>
+      <p>This playlist is a {(analysisresultPL<0?analysisresultPL*-1:analysisresultPL).toFixed(2)}/5 {analysisresultPL<0?" in the negativity scale":" in the positivity scale"}</p>
+    
      <p><strong className="green">{negativeLengthPL}</strong> negative words found </p>
          <p><strong className="green">{positiveLengthPL}</strong> positive words found </p></div>
   
