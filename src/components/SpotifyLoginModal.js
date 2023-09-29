@@ -212,7 +212,7 @@ const SpotifyLoginModal = () => {
     const code = urlParams.get("code");
     const clientId = "74a1f6c1bc054487a111c1773cebd2e7"; // Replace with your Spotify client ID
     const clientSecret = "01695a240399436e9f2f9f71f5db22fb"; // Replace with your Spotify client secret
-    const redirectUri = "http://localhost:3000/"; // Replace with your Spotify redirect URI
+    const redirectUri = "https://lyricalanalysis.vercel.app/"; // Replace with your Spotify redirect URI
     const tokenUrl = "https://accounts.spotify.com/api/token";
 
     const response = await fetch(tokenUrl, {
@@ -233,7 +233,7 @@ const SpotifyLoginModal = () => {
   const [location, navigate] = useLocation();
 
   const handleLogin = async () => {
-    const redirectUri = "http://localhost:3000/"; // Replace with your Spotify redirect URI
+    const redirectUri = "https://lyricalanalysis.vercel.app/"; // Replace with your Spotify redirect URI
     const scopes = ["user-read-recently-played", "user-library-read", "user-read-private", "user-read-email"];
     const loginUrl = `https://accounts.spotify.com/authorize?client_id=74a1f6c1bc054487a111c1773cebd2e7&redirect_uri=${redirectUri}&scope=${scopes.join(
       "%20"
