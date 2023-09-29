@@ -297,7 +297,7 @@ const SpotifyLoginModal = () => {
 
          {user && (
           <div className="landingPage">
-        {loading?<img src="https://s11.gifyu.com/images/S4CQB.gif" className="loading" alt=""></img>:<div className="startBtn" onClick={handleFetchRandomSongs}>START</div>}</div>
+        {loading?<img src="https://s6.gifyu.com/images/S4JZ9.gif" className="loading" alt=""></img>:<div className="startBtn" onClick={handleFetchRandomSongs}>START</div>}</div>
       )}
     </div>
   );
