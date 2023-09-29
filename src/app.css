@@ -34,10 +34,10 @@
 .recson{
   margin: 20px auto!important;
 }
-.css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+.MuiOutlinedInput-notchedOutline {
   border-color: #ddd!important;
 }
-.css-hfutr2-MuiSvgIcon-root-MuiSelect-icon,.css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root,.css-1jy569b-MuiFormLabel-root-MuiInputLabel-root{
+.MuiSelect-icon,.MuiInputBase-root,.MuiFormLabel-root{
   color: #ddd!important;
 }
 #root{
