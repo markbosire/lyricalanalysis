@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from "react";
+import React from "react";
 import { Select, MenuItem, FormControl,InputLabel } from '@mui/material';
 import axios from "axios";
 
@@ -327,17 +328,18 @@ useEffect(()=>{
  
 
 
-  return (
-    <div className="App ">
+  return (<React.Fragment>
+    <div className="gradient"></div>
+    <div className="App">
       
       <header>
      
         <img src={imageUrl} className="avatar"></img>
         <h3>Hi {user.display_name}</h3>
-         {analysisresult!=null?<p>Your 10 recent songs scored a {(analysisresult<0?analysisresult*-1:analysisresult).toFixed(2)}/5 {analysisresult<0?"in the negativity scale":"in the positivity scale"}</p>:<p>loading</p>}
-     
-      </header>
-      <div >{
+        {analysisresult!=null?<p>Your 10 recent songs scored a {(analysisresult<0?analysisresult*-1:analysisresult).toFixed(2)}/5 {analysisresult<0?"in the negativity scale":"in the positivity scale"}</p>:<p>loading</p>}
+      
+      
+      <div className="recson" >{
       
       <div>
       <h2 className="green">Your recent songs</h2>
@@ -370,15 +372,17 @@ useEffect(()=>{
       <p><strong className="green">Playlist Name:</strong> {playlist.name}</p><br></br>
       <img className="proImg" src={playlist.images.length>0?playlist.images[0].url:"https://cdn.dribbble.com/users/1752437/screenshots/14183305/ep_4x.png"} alt={playlist.name} />
     </div>}
-    {!loading?<div className="centering"><p>{renderEmotionScale(analysisresultPL)}</p>
-      <p>This playlist is a {(analysisresultPL<0?analysisresultPL*-1:analysisresultPL).toFixed(2)}/5 {analysisresultPL<0?" in the negativity scale":" in the positivity scale"}</p>
-    
+    {!loading?<div className="centering">
+    <p>This playlist is a {(analysisresultPL<0?analysisresultPL*-1:analysisresultPL).toFixed(2)}/5 {analysisresultPL<0?" in the negativity scale":" in the positivity scale"}</p>
+      <p>{renderEmotionScale(analysisresultPL)}</p>
      <p><strong className="green">{negativeLengthPL}</strong> negative words found </p>
          <p><strong className="green">{positiveLengthPL}</strong> positive words found </p></div>
   
     :<div className="centering"><img src="https://s6.gifyu.com/images/S4JZ9.gif" className="loading" alt=""></img></div>}
       </div>
-    
+      </header>
     </div>
+    </React.Fragment>
+    
   );
 }
